@@ -1,0 +1,12 @@
+const mongoose = require('mongoose');
+
+const taskSchema = new mongoose.Schema({
+    assignedTo: { type: String, required: true },
+    status: { type: String, required: true },
+    dueDate: { type: Date, required: true },
+    priority: { type: String, required: true },
+    comments: { type: String },
+});
+
+const Task = mongoose.model('Task', taskSchema);
+module.exports = Task;
